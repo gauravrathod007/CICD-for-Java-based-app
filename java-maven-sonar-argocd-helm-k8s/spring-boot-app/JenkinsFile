@@ -8,8 +8,6 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        #sh 'echo passed'
-        #//git branch: 'master', url: 'https://github.com/gauravrathod007/CICD-for-Java-based-app.git'
         script {
                     // Clean the workspace before checking out code
                     deleteDir()
