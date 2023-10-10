@@ -8,17 +8,8 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        script {
-                    // Clean the workspace before checking out code
-                    deleteDir()
-                    
-                    // Clone the Git repository
-                    checkout([
-                        $class: 'GitSCM',
-                        branches: [[name: 'master']], // Specify the branch you want to checkout
-                        userRemoteConfigs: [[url: 'https://github.com/gauravrathod007/CICD-for-Java-based-app.git']]
-                  ])
-              }
+        sh 'echo passed'
+        //git branch: 'master', url: 'https://github.com/gauravrathod007/CICD-for-Java-based-app.git'
             }
           }
     stage('Build and Test') {
