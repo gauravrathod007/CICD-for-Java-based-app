@@ -65,14 +65,17 @@ pipeline {
                       echo "No changes to commit."
                     fi
                 '''
-                    post {
-                      always {
-                        // Delete the workspace at the end of the pipeline run
-                        cleanWs()
-                  }
-               }
+
+
             }
         }
     }
   }
+post {
+    always {
+        // Delete the workspace at the end of the pipeline run
+        cleanWs()
+    }
+}
+
 }
