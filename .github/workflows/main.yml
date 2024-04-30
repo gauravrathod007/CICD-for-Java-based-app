@@ -33,7 +33,7 @@ jobs:
         run: |
           docker build -t gcr.io/your-gcp-project-id/my-app:${{ github.sha }} .
           docker push gcr.io/your-gcp-project-id/my-app:${{ github.sha }}
-        working-directory: java-maven-sonar-argocd-helm-k8s/spring-boot-app/Dockerfile
+        working-directory: java-maven-sonar-argocd-helm-k8s/spring-boot-app
       - name: Deploy to Kubernetes using Helm
         run: |
           helm upgrade --install my-app-chart helm/my-app --set image.tag=${{ github.sha }}
