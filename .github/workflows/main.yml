@@ -19,7 +19,7 @@ jobs:
         run: mvn -f java-maven-sonar-argocd-helm-k8s/spring-boot-app/pom.xml clean install -DskipTests
 
       - name: Run Unit Tests with JUnit and Mockito
-        run: mvn test
+        run: mvn -f java-maven-sonar-argocd-helm-k8s/spring-boot-app/pom.xml test
 
   deploy:
     needs: build_and_test
